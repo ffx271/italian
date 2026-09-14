@@ -1,4 +1,4 @@
 #!/bin/bash
 # Script to generate EPUB file from Markdown
 #
-pandoc --number-sections --metadata-file=yaml/ita-A1A2.yaml md/ItalianA1A2.md -o epub/ItalianA1A2.epub
+pandoc --number-sections --metadata-file=yaml/italian-201.yaml md/italian-201.md -o epub/italian-201.epub
