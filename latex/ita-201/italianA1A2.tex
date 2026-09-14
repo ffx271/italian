@@ -1,0 +1,72 @@
+%----------------------------------------------------------------------------------------------------
+% START OF MAIN DOCUMENT (ROOT DOCUMENT CONTAINER)
+%----------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------------------
+% - Define the document class ('book' so we can use chapters, sections, and front matter)
+% - Import the packages we use
+% - Initialize the document and new command definitions
+% - Include each of the chapters and material that we want.
+%----------------------------------------------------------------------------------------------------
+
+\documentclass[openany]{book} % openany overrides the bias to start chapters on odd pages
+
+% Useful packages
+\usepackage[letterpaper,top=1.5in,bottom=1.5in,left=1.2in,right=1.2in]{geometry}
+\usepackage[T1]{fontenc} % for superior accented character support
+\usepackage[italian,english]{babel}    % Multi-lingual, mainly English, some Italian
+\usepackage{csquotes} % recommended when using bib pkg for multi-lingual docs
+
+% For a bibliography, create a .bib file, then use biber on the .bcf file
+%\usepackage[style=alphabetic,backend=biber]{biblatex} % for bibliography, with citations like [Foo26]
+%\addbibresource{italian.bib}
+
+\usepackage{booktabs} % for tables
+\usepackage{float}    % for table placement
+\usepackage{multirow} % for nicer tables
+\usepackage{tablefootnote} % for table notes, i.e. footnotes for tables
+\usepackage{longtable}
+
+\usepackage{ulem}     % for strikethrough
+\usepackage{mdframed} % for text boxes
+\usepackage{enumitem} % for finer control over list items
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % for web links
+\usepackage{graphicx} % for embedded graphics
+\usepackage{eurosym}  % for the Euro symbol
+
+% Number sections 3 levels down below a chapter (i.e. section/subsection/subsubsection.
+% Default is only to number to subsection.)
+\setcounter{secnumdepth}{2}
+
+\begin{document}
+    % Although we are not writing a lot of Italian at this stage, and simple
+    % commands like \textit would suffice to indicate Italian, it seems reasonable
+    % to set aside some new commands to represent Italian text, so that when
+    % we start to write longer pieces, the babel package handles features like
+    % hyphenation properly.
+    \newcommand{\iti}[1]{\foreignlanguage{italian}{\textit{#1}}}
+    \newcommand{\itb}[1]{\foreignlanguage{italian}{\textbf{#1}}}
+    \newcommand{\itr}[1]{\foreignlanguage{italian}{\text{#1}}}
+
+    \frontmatter
+      \include{frontmatter00}
+
+    \mainmatter
+      \include{module01}
+      \include{module02}
+      \include{module03}
+      \include{module04}
+      \include{module05}
+      %\include{module06}
+      %\include{module07}
+      %\include{module08}
+
+    \backmatter
+      \appendix
+      \include{appendix01}
+      %\printbibliography
+\end{document}
+
+%----------------------------------------------------------------------------------------------------
+% END OF MAIN DOCUMENT (ROOT DOCUMENT CONTAINER)
+%----------------------------------------------------------------------------------------------------
