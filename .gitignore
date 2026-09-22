@@ -23,6 +23,8 @@
 ## folder, not the tex one).
 latex/ita-100/*.pdf
 latex/ita-200/*.pdf
+latex/ita-201/*.pdf
+latex/ita-300/*.pdf
 
 ## Intermediate documents:
 *.dvi
